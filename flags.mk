@@ -1,3 +1,5 @@
-CC=g++
+CC=/usr/local/bin/g++-8
+#CC=clang++
 CPPFLAGS=-std=c++11
-CFLAGS=-O3 -g -Wall -fmessage-length=0 -fopenmp -maes -msse4 -mtune=native
+CFLAGS=-O3 -g -Wall -fmessage-length=0 -maes -msse4 -mtune=native
+CFLAGS+=-fopenmp
