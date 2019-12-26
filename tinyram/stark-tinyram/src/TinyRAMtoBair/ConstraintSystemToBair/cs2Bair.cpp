@@ -26,10 +26,14 @@ cs2Bair::cs2Bair(ProtoboardPtr pb,const TinyRAMProgram& program, const int trans
 		this->init();
 		std::cout << "cs2Bair inited" << std::endl;
 		this->generateConstraints();
+		std::cout << "cs2Bair generated constraints" << std::endl;
 		this->boundaryConstraints();
+		std::cout << "cs2Bair generated boundary constraints" << std::endl;
         if(constructWitness){
             generateWitness();
+			std::cout << "cs2Bair generated witness" << std::endl;
             generateMemoryWitness();
+			std::cout << "cs2Bair generated memory witness" << std::endl;
         }
 }
 
