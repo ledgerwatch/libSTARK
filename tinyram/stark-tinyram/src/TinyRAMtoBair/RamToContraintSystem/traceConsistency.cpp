@@ -140,7 +140,7 @@
 		GADGETLIB_ASSERT(numRegistersTrace1 == numRegistersTrace2, "TraceConsistency: number of registers should be the same");
 		
 
-		std::cout << "registerConsistency about to begin" << std::endl;
+		std::cout << "registerConsistency about to begin with numRegistersTrace1=" << numRegistersTrace1 << std::endl;
 		for (unsigned int i = 0; i < numRegistersTrace1; ++i){
 			Variable regiSecond = followingTraceVariables_.second_.registers_[i];
 			Variable regiFirst = followingTraceVariables_.first_.registers_[i];
