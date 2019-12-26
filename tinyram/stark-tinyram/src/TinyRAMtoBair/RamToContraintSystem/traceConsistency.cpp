@@ -1,3 +1,4 @@
+#include <iostream>
 #include <algebraLib/variable_operators.hpp>
 #include "traceConsistency.hpp"
 
@@ -345,6 +346,7 @@
 	void TraceConsistency::generateConstraints(){
 		GADGETLIB_ASSERT(aluOutput_.flag_ == followingTraceVariables_.second_.flag_, "TraceConsistency: aluOutput.flag == followingTraceVariables_.second_.flag_");
 		GADGETLIB_ASSERT(program_.size() > 0, "TraceConsistency: The program should be initialized");
+		std::cout << "Trace consistency about to generate constraints" << std::endl;
 		const Algebra::FElem generator = Algebra::FElem(getGF2E_X());
 		::std::shared_ptr<const TinyRAMProtoboardParams> params = std::dynamic_pointer_cast<const TinyRAMProtoboardParams>(pb_->params());
 		timeStampConsistency();
