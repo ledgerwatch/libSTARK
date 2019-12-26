@@ -157,6 +157,7 @@
 			constraints.push_back(regiSecond + aluOutput_.value_);
 
 			for (unsigned int j = 0; j < program_.size(); j++){
+				std::cout << "registerConsistency about to begin program step " << j << std::endl;
 				Opcode opcode = program_.code()[j].opcode_;
 				unsigned int dest = program_.code()[j].destIdx_;
 				if (dest == i){
