@@ -49,12 +49,17 @@ libstark::BairInstance constructInstance(const TinyRAMProgram& prog, const unsig
 
 libstark::BairWitness constructWitness(const TinyRAMProgram& prog, const unsigned int t){
     resetALU_GadgetGlobalState();
+    cout << "Reset ALU Global state" << endl;
     shared_ptr<const TinyRAMProtoboardParams> archParams_(make_shared<const TinyRAMProtoboardParams>(prog.archParams().numRegisters, trRegisterLen, trOpcodeLen, 16, 1));
-
+    cout << "Created arch params" << endl;
     gadgetlib::ProtoboardPtr pb_witness = Protoboard::create(archParams_);
+    cout << "Created protoboard" << endl;
     cs2Bair cs2bair_witness(pb_witness, prog, int(gadgetlib::POW2(t) - 1), true);
+    cout << "Created cs2bair_witness" << endl;
     unique_ptr<cs2BairColoring> cs2bairColoring_(new cs2BairColoring(cs2bair_witness));
+    cout << "Created cs2bairColoring" << endl;
     unique_ptr<cs2BairMemory> cs2bairMemory_(new cs2BairMemory(cs2bair_witness));
+    cout << "Created cs2bairMemory" << endl;
 
     return libstark::BairWitness(move(cs2bairColoring_), move(cs2bairMemory_));
 }
