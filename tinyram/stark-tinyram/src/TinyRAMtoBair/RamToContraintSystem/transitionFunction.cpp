@@ -42,9 +42,11 @@ void TransitionFunction::init(){
 void TransitionFunction::generateConstraints(){
 	std::cout << "Transition Function about to generate constraints" << std::endl;
 	aluInputConsistnecy_g_->generateConstraints();
-	std::cout << "Transition Function generated constrains" << std::endl;
+	std::cout << "Transition Function generated aluInputConsistency constrains" << std::endl;
 	alu_g_->generateConstraints();
+	std::cout << "Transition Function generated alu gadget constrains" << std::endl;
 	traceConsistency_g_->generateConstraints();
+	std::cout << "Transition Function generated trace consistency constrains" << std::endl;
 };
 
 int TransitionFunction::calcPC(){
