@@ -72,7 +72,6 @@ void execute(const string assemblyFile, const unsigned int t, const unsigned int
     
     //simulation only - no prover
     if(simulateOnly){
-         cout << "Simulation only" << endl;
         const auto bairInstance = constructInstance(program,t);
         libstark::Protocols::simulateProtocol(bairInstance, securityParameter);
         return;
@@ -80,8 +79,11 @@ void execute(const string assemblyFile, const unsigned int t, const unsigned int
     
     //full execution 
     const auto bairWitness = constructWitness(program,t);
+    cout << "Contructed witness" << endl;
     const auto bairInstance = constructInstance(program,t);
+    cout << "Constructed instance" << endl;
     libstark::Protocols::executeProtocol(bairInstance,bairWitness,securityParameter,false,false,true);
+    cout << "Executed protocol" << endl;
 }
 
 int main(int argc, char *argv[]) {
