@@ -34,6 +34,10 @@ TINYRAM_TESTS_DIR		:= $(WD)/tinyram/stark-tinyram-tests
 
 default: stark-dpm stark-tinyram
 
+debug: CXXFLAGS += -DDEBUG -g -O0
+debug: CCFLAGS += -DDEBUG -g -O0
+debug: stark-dpm stark-tinyram
+
 tests: libstark-tests algebralib-tests stark-tinyram-tests
 
 libstark:
