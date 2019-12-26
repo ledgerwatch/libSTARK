@@ -64,8 +64,10 @@ void execute(const string assemblyFile, const unsigned int t, const unsigned int
     
     //Initialize instance
     initTinyRAMParamsFromEnvVariables();
+    cout << "Parameters initialised" << endl;
 	TinyRAMProgram program(assemblyFile, REGISTERS_NUMBER, trRegisterLen);
     program.addInstructionsFromFile(assemblyFile);
+    cout << "Added intrusction from the file" << endl;
 
     
     //simulation only - no prover
