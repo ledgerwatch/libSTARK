@@ -142,6 +142,7 @@
 
 		std::cout << "registerConsistency about to begin with numRegistersTrace1=" << numRegistersTrace1 << std::endl;
 		for (unsigned int i = 0; i < numRegistersTrace1; ++i){
+			std::cout << "registerConsistency about to begin iteration " << i << std::endl;
 			Variable regiSecond = followingTraceVariables_.second_.registers_[i];
 			Variable regiFirst = followingTraceVariables_.first_.registers_[i];
 
