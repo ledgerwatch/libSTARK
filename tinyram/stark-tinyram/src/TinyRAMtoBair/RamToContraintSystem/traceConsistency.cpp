@@ -156,6 +156,7 @@
 			constraints.push_back(regiSecond + regiFirst);
 			constraints.push_back(regiSecond + aluOutput_.value_);
 
+			std::cout << "registerConsistency about to begin program with " << program_.size() << " steps" << std::endl;
 			for (unsigned int j = 0; j < program_.size(); j++){
 				std::cout << "registerConsistency about to begin program step " << j << std::endl;
 				Opcode opcode = program_.code()[j].opcode_;
