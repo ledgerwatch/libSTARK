@@ -350,8 +350,11 @@
 		const Algebra::FElem generator = Algebra::FElem(getGF2E_X());
 		::std::shared_ptr<const TinyRAMProtoboardParams> params = std::dynamic_pointer_cast<const TinyRAMProtoboardParams>(pb_->params());
 		timeStampConsistency();
+		std::cout << "Trace consistency about generated timestamp constraints" << std::endl;
 		pcConsistency();
+		std::cout << "Trace consistency about generated pc constraints" << std::endl;
 		registerConsistency();
+		std::cout << "Trace consistency about generated register constraints" << std::endl;
 
 	}
 
