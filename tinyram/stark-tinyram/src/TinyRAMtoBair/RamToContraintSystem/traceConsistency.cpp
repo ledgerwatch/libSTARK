@@ -162,7 +162,7 @@
 				Opcode opcode = program_.code()[j].opcode_;
 				std::cout << "registerConsistency got opcode" << std::endl;
 				unsigned int dest = program_.code()[j].destIdx_;
-				std::cout << "registerConsistency got dest" << std::endl;
+				std::cout << "registerConsistency got dest " << dest << std::endl;
 				if (dest == i){
 					switch (opcode)
 					{
@@ -197,6 +197,7 @@
 						//constraintPoly = constraintPoly + (selector_j * (regiSecond + aluOutput_.value_));
 						break;
 					default:
+						std::cout << "No such opcode " << std::endl;
 						GADGETLIB_FATAL("Trace Consistency: No Such opcode exists");
 						break;
 					}
