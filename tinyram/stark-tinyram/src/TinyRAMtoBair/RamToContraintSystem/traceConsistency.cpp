@@ -140,7 +140,7 @@
 		GADGETLIB_ASSERT(numRegistersTrace1 == numRegistersTrace2, "TraceConsistency: number of registers should be the same");
 		
 
-		
+		std::cout << "registerConsistency about to begin" << std::endl;
 		for (unsigned int i = 0; i < numRegistersTrace1; ++i){
 			Variable regiSecond = followingTraceVariables_.second_.registers_[i];
 			Variable regiFirst = followingTraceVariables_.first_.registers_[i];
@@ -350,11 +350,11 @@
 		const Algebra::FElem generator = Algebra::FElem(getGF2E_X());
 		::std::shared_ptr<const TinyRAMProtoboardParams> params = std::dynamic_pointer_cast<const TinyRAMProtoboardParams>(pb_->params());
 		timeStampConsistency();
-		std::cout << "Trace consistency about generated timestamp constraints" << std::endl;
+		std::cout << "Trace consistency generated timestamp constraints" << std::endl;
 		pcConsistency();
-		std::cout << "Trace consistency about generated pc constraints" << std::endl;
+		std::cout << "Trace consistency generated pc constraints" << std::endl;
 		registerConsistency();
-		std::cout << "Trace consistency about generated register constraints" << std::endl;
+		std::cout << "Trace consistency generated register constraints" << std::endl;
 
 	}
 
