@@ -72,6 +72,7 @@ void execute(const string assemblyFile, const unsigned int t, const unsigned int
     
     //simulation only - no prover
     if(simulateOnly){
+         cout << "Simulation only" << endl;
         const auto bairInstance = constructInstance(program,t);
         libstark::Protocols::simulateProtocol(bairInstance, securityParameter);
         return;
