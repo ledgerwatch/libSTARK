@@ -1,3 +1,4 @@
+#include <iostream>
 #include <memory>
 #include "transitionFunction.hpp"
 #include "ALU.hpp"
@@ -39,7 +40,9 @@ void TransitionFunction::init(){
 }
 
 void TransitionFunction::generateConstraints(){
+	std::cout << "Transition Function about to generate constraints" << std::endl;
 	aluInputConsistnecy_g_->generateConstraints();
+	std::cout << "Transition Function generated constrains" << std::endl;
 	alu_g_->generateConstraints();
 	traceConsistency_g_->generateConstraints();
 };
