@@ -160,7 +160,9 @@
 			for (unsigned int j = 0; j < program_.size(); j++){
 				std::cout << "registerConsistency about to begin program step " << j << std::endl;
 				Opcode opcode = program_.code()[j].opcode_;
+				std::cout << "registerConsistency got opcode" << std::endl;
 				unsigned int dest = program_.code()[j].destIdx_;
+				std::cout << "registerConsistency got dest" << std::endl;
 				if (dest == i){
 					switch (opcode)
 					{
