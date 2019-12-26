@@ -1,3 +1,4 @@
+#include <iostream>
 #include "cs2Bair.hpp"
 #include "../RamToContraintSystem/MemoryConsraints.hpp"
 
@@ -23,6 +24,7 @@ cs2Bair::cs2Bair(ProtoboardPtr pb,const TinyRAMProgram& program, const int trans
 	memoryFollowingTraceVariables_(followingTraceVariable_.first_.timeStamp_, followingTraceVariable_.second_.timeStamp_)
     {
 		this->init();
+		std::cout << "cs2Bair inited" << std::endl;
 		this->generateConstraints();
 		this->boundaryConstraints();
         if(constructWitness){
