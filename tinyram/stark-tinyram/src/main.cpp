@@ -78,6 +78,7 @@ void execute(const string assemblyFile, const unsigned int t, const unsigned int
     }
     
     //full execution 
+    cout << "About to construct witness" << endl;
     const auto bairWitness = constructWitness(program,t);
     cout << "Contructed witness" << endl;
     const auto bairInstance = constructInstance(program,t);
