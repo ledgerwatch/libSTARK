@@ -167,10 +167,13 @@ void cs2Bair::createTranslationVector(){
 
 void cs2Bair::generateConstraints(){
 	transitionFunction_->generateConstraints();
+	std::cout << "cs2Bair generated transitionFunction constraints" << std::endl;
 	if (doesProgramUsesMemory_){
 		memoryConstraints_->generateConstraints();
+		std:cout << "cs2Bair generated memory constrains" << std::endl;
 	}
 	createTranslationVector();
+	std:cout << "cs2Bair created translation vector" << std::endl;
 }
 
 //VariableAssignment <-> vector<FieldElement> mappings
